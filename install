@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+
+rm -f $HOME/.config/starship.toml
+ln -s $DOTFILES/starship.toml $HOME/.config/starship.toml
+
+# should install iterm configuration that works for nvim work.
+# fonts, window size, line_height and so on.
+#
+
+rm -f $HOME/.tmux.conf
+ln -s $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+
+mkdir -p $HOME/.local/bin
+
+rm -rf $HOME/.local/bin/tmux-t
+ln -s $DOTFILES/scripts/tmux-t $HOME/.local/bin/tmux-t
+
+rm -rf $HOME/.config/nvim
+ln -s $DOTFILES/nvim $HOME/.config/nvim
